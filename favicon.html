@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <h1>This page will update favicon every 3 seconds</h1>
+    <!-- 
+        Importing vendor favico library 
+        This one helps adding a small bubble to the favicon
+        See API here: http://lab.ejci.net/favico.js/
+    -->
+    <script src="favico.js"></script>
+    <script>
+        // Setting up favico.js animation
+        const favicon = new Favico({
+            animation:'slide'
+        });
+        
+        // Define a count
+        let count = 0;
+
+        // Apply a new badge every 3 seconds
+        setInterval(() => {
+            count++;
+            favicon.badge(count);
+        }, 3000)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title example</title>
+</head>
+<body>
+    <h1>This page will update title every 5 seconds</h1>
+    <script>
+        let count = 0;
+        const title = document.title;
+
+        // Change title method - Updates the title as required
+        const changeTitle = () => {
+            count++;
+            const newTitle = '(' + count + ') ' + title;
+            document.title = newTitle;
+        }
+
+        // Update the title every 5 seconds
+        setInterval(() => {
+            changeTitle();
+        }, 5000)
+    </script>
+</body>
+</html>
